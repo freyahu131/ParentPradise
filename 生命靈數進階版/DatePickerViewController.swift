@@ -10,47 +10,65 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
 
-  
-    @IBOutlet weak var txtDatePicker: UITextField!
     
-    let datePicker = UIDatePicker()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        showDatePicker()
-        
+    @IBOutlet var DatePicker: UIDatePicker!
+    
+    @IBAction func DatePickerValueChange(_ sender: UIDatePicker) {
+    }
+    
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "YYYYMMdd"
+    let birthday = dateFormatter.string(from:DatePicker.date)
+    
+    
+    var lifecode1: Int = 0
+    var lifecode2: Int = 0
+    var lifecode3: Int = 0
+    
+    
+    for i in birthday {
+    let number = Int(String(i))
+    lifecode1 = lifecode1 + number!
+    print(lifecode1)
+    }
+    
+    if lifecode1 < 10 {
+    lifeCodeLabel.text = String(lifecode1)
+    
+    }
+    else {
+    
+    let Code = String(Int(lifecode1))
+    for index in Code {
+    let Number = Int(String(index))
+    lifecode2 = lifecode2 + Number!
+    }
+    if lifecode2 < 10 {
+    lifeCodeLabel.text = String(lifecode2)
+    
+    
+    }
+    else {
+    let Lifecode2 = String(Int(lifecode2))
+    for i in Lifecode2 {
+    let Supernumber = Int(String(i))
+    lifecode3 = lifecode3 + Supernumber!
+    lifeCodeLabel.text = String(lifecode3)
+    
+    
+    }
+    }
+    
     }
     
     
-    func showDatePicker(){
-        //Formate Date
-        datePicker.datePickerMode = .date
-        
-        //ToolBar
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
-        
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.bordered, target: self, action: "donedatePicker")
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.bordered, target: self, action: "cancelDatePicker")
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        
-        txtDatePicker.inputAccessoryView = toolbar
-        txtDatePicker.inputView = datePicker
-        
-    }
     
-    func donedatePicker(){
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        txtDatePicker.text = formatter.string(from: datePicker.date)
-        self.view.endEditing(true)
-    }
     
-    func cancelDatePicker(){
-        self.view.endEditing(true)
-    }
+
     
-}
+    
+
+ 
+
+  }

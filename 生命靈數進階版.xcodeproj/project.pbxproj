@@ -12,6 +12,7 @@
 		049DF0141F87496800D38274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049DF0131F87496800D38274 /* Assets.xcassets */; };
 		049DF0171F87496800D38274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049DF0151F87496800D38274 /* LaunchScreen.storyboard */; };
 		049DF01F1F874F5E00D38274 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DF01E1F874F5E00D38274 /* DatePickerViewController.swift */; };
+		049DF0211F87540900D38274 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DF0201F87540900D38274 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		049DF0161F87496800D38274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049DF0181F87496800D38274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		049DF01E1F874F5E00D38274 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		049DF0201F87540900D38274 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				049DF00C1F87496800D38274 /* AppDelegate.swift */,
 				049DF0101F87496800D38274 /* Main.storyboard */,
+				049DF0201F87540900D38274 /* DetailViewController.swift */,
 				049DF01E1F874F5E00D38274 /* DatePickerViewController.swift */,
 				049DF0131F87496800D38274 /* Assets.xcassets */,
 				049DF0151F87496800D38274 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049DF0211F87540900D38274 /* DetailViewController.swift in Sources */,
 				049DF00D1F87496800D38274 /* AppDelegate.swift in Sources */,
 				049DF01F1F874F5E00D38274 /* DatePickerViewController.swift in Sources */,
 			);
