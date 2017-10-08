@@ -9,17 +9,20 @@
 import UIKit
 
 class DatePickerViewController: UIViewController {
+   
+ 
+   
 
-    
+    @IBOutlet var lifecodeLabel: UILabel!
     
     @IBOutlet var DatePicker: UIDatePicker!
     
-    @IBAction func DatePickerValueChange(_ sender: UIDatePicker) {
-    }
+    @IBAction func ValueChanged(_ sender: UIDatePicker) {
+    
     
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYYMMdd"
-    let birthday = dateFormatter.string(from:DatePicker.date)
+    let birthday = dateFormatter.string(from: DatePicker.date)
     
     
     var lifecode1: Int = 0
@@ -34,7 +37,7 @@ class DatePickerViewController: UIViewController {
     }
     
     if lifecode1 < 10 {
-    lifeCodeLabel.text = String(lifecode1)
+    lifecodeLabel.text = String(lifecode1)
     
     }
     else {
@@ -45,7 +48,7 @@ class DatePickerViewController: UIViewController {
     lifecode2 = lifecode2 + Number!
     }
     if lifecode2 < 10 {
-    lifeCodeLabel.text = String(lifecode2)
+    lifecodeLabel.text = String(lifecode2)
     
     
     }
@@ -54,21 +57,37 @@ class DatePickerViewController: UIViewController {
     for i in Lifecode2 {
     let Supernumber = Int(String(i))
     lifecode3 = lifecode3 + Supernumber!
-    lifeCodeLabel.text = String(lifecode3)
+    lifecodeLabel.text = String(lifecode3)
     
     
     }
     }
-    
+        
+        }
+        
     }
-    
-    
-    
-    
+        
+  class DatePickerViewController: UIViewController {
+            
+            override func prepare(for segue: UIStoryboardSegue, sender:
+                Any?) {
+                
+                let label = sender as! UILabel //把sender傳遞過來的資料強制轉型成UILabel的型態
+                let controller = segue.destination as! DetailViewController
+                //把segue.destination強制轉型成detailViewController
+                
+                controller.name = label.text!//把按鈕上的名字傳過去
+                
+            }
+
+}
+}
+
 
     
+
     
 
  
 
-  }
+
